@@ -10,5 +10,10 @@ const client = new Client()
 const account = new Account(client)
 
 function register(event){
-    account.create
+    account.create(
+        ID.unique(),
+        event.target.elements['register-email'].value,
+        event.target.elements['register-password'].value,
+        event.target.elements['register-username'].value
+    )
 }
